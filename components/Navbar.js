@@ -113,7 +113,9 @@ const NavBar = () => {
                     size="large"
                     onClick={handleClick}
                   >
-                    MEN
+                    <font color="#000" face="optima">
+                      <b>MEN</b>
+                    </font>
                   </Button>
                   <Popover
                     id={id}
@@ -441,7 +443,9 @@ const NavBar = () => {
                     size="large"
                     onClick={handleClick2}
                   >
-                    WOMEN
+                    <font color="#000" face="optima">
+                      <b>WOMEN</b>
+                    </font>
                   </Button>
                   <Popover
                     id={id2}
@@ -777,7 +781,9 @@ const NavBar = () => {
                     size="large"
                     onClick={handleClick3}
                   >
-                    KIDS
+                    <font color="#000" face="optima">
+                      <b>KIDS</b>
+                    </font>
                   </Button>
                   <Popover
                     id={id3}
@@ -1154,10 +1160,10 @@ const NavBar = () => {
           <div className="pl-10">
             <button
               type="button"
-              className="inline-flex relative items-center p-0.5 text-sm font-medium text-center text-white bg-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="inline-flex relative items-center p-1 text-sm font-medium text-center text-white bg-white rounded-lg hover:bg-blue-100"
             >
               <img src="https://img.icons8.com/sf-regular/48/000000/shopping-cart.png" />
-              <span className="sr-only">Notifications</span>
+              <span className="sr-only">Cart</span>
               <div className="p-1 inline-flex absolute -top-0 -right-1 justify-center items-center w-wrap h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">
                 20
               </div>
@@ -1176,7 +1182,7 @@ const NavBar = () => {
                 >
                   <span className="sr-only">Open user menu</span>
                   <img
-                    className="h-8 w-8 rounded-full"
+                    className="h-10 w-10 rounded-full"
                     src="https://img.icons8.com/material/24/000000/user-male-circle--v1.png"
                     alt=""
                   />
