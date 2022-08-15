@@ -1,6 +1,4 @@
 import NavBar from './Navbar';
-import Head from 'next/head';
-import Script from 'next/script';
 import ProductItem from './productItem';
 
 import {
@@ -10,6 +8,9 @@ import {
   Alert,
   Grid,
   Box,
+  Stack,
+  Divider,
+  Typography,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import client from '../utils/client';
@@ -38,6 +39,15 @@ const Layout = ({ children }) => {
     <div>
       <NavBar />
       {children}
+      <div
+        style={{
+          marginTop: 25,
+        }}
+      >
+        <Divider variant="middle">
+          <b> LATEST COLLECTION </b>
+        </Divider>
+      </div>
       {loading ? (
         <CircularProgress />
       ) : error ? (

@@ -3,7 +3,6 @@ import {
   CardActionArea,
   Box,
   CardMedia,
-  Paper,
   Typography,
 } from '@mui/material';
 import NextLink from 'next/link';
@@ -24,17 +23,25 @@ export default function productItem({ product }) {
           </CardActionArea>
         </NextLink>
       </Card>
-      <Box sx={{ width: 150 }}>
-        <Paper>
-          <div
-            style={{
-              backgroundColor: '#fff',
-            }}
-          >
-            <Typography align="center"> {product.name} </Typography>{' '}
-          </div>{' '}
-        </Paper>{' '}
-      </Box>{' '}
+      <Box sx={{ width: 'wrap', height: 50 }}>
+        <div
+          style={{
+            backgroundColor: '#fff',
+            position: 'relative',
+            top: '-25px',
+            height: 50,
+            paddingTop: 13,
+            marginLeft: 30,
+            marginRight: 30,
+            boxShadow:
+              '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19',
+          }}
+        >
+          <Typography align="center">
+            <b> {product.name} </b>
+          </Typography>
+        </div>
+      </Box>
     </div>
   );
 }
