@@ -7,18 +7,18 @@ import {
 } from '@mui/material';
 import NextLink from 'next/link';
 import React from 'react';
-import { urlForThumbnail } from '../utils/image';
+import { urlForThumbnail1 } from '../utils/image2';
 
-export default function productItem({ product }) {
+export default function TrendingItem({ trending }) {
   return (
     <div style={{ margin: 'auto' }}>
       <Card>
-        <NextLink href={`/product/${product.slug.current}`} passHref>
+        <NextLink href={`/product/${trending.slug.current}`} passHref>
           <CardActionArea>
             <CardMedia
               component="img"
-              image={urlForThumbnail(product.image)}
-              title={product.name}
+              image={urlForThumbnail1(trending.image)}
+              title={trending.name}
             ></CardMedia>
           </CardActionArea>
         </NextLink>
@@ -26,20 +26,16 @@ export default function productItem({ product }) {
       <Box sx={{ width: 'wrap', height: 50 }}>
         <div
           style={{
-            backgroundColor: '#fff',
+            background: 'rgba(0,0,0,0.5)',
             position: 'relative',
-            top: '-25px',
+            top: '-80px',
             height: 50,
             paddingTop: 13,
-            marginLeft: 30,
-            marginRight: 30,
-            boxShadow:
-              '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19',
           }}
         >
           <Typography align="center">
-            <font size="4" face="century gothic">
-              <b> {product.name} </b>
+            <font color="#fff" size="4" face="century gothic">
+              <b> {trending.name} </b>
             </font>
           </Typography>
         </div>

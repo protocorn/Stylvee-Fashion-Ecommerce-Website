@@ -9,16 +9,16 @@ import NextLink from 'next/link';
 import React from 'react';
 import { urlForThumbnail } from '../utils/image';
 
-export default function productItem({ product }) {
+export default function productItem2({ product2 }) {
   return (
     <div style={{ margin: 'auto' }}>
       <Card>
-        <NextLink href={`/product/${product.slug.current}`} passHref>
+        <NextLink href={`/product/${product2.slug.current}`} passHref>
           <CardActionArea>
             <CardMedia
               component="img"
-              image={urlForThumbnail(product.image)}
-              title={product.name}
+              image={urlForThumbnail(product2.image)}
+              title={product2.name}
             ></CardMedia>
           </CardActionArea>
         </NextLink>
@@ -39,11 +39,11 @@ export default function productItem({ product }) {
         >
           <Typography align="center">
             <font size="4" face="century gothic">
-              <b> {product.name} </b>
-            </font>
-          </Typography>
-        </div>
-      </Box>
+              <b> {product2.name} </b>{' '}
+            </font>{' '}
+          </Typography>{' '}
+        </div>{' '}
+      </Box>{' '}
     </div>
   );
 }
