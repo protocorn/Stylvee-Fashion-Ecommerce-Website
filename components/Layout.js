@@ -2,15 +2,9 @@ import ProductItem from './productItem';
 import ProductItem2 from './productItem2';
 
 import {
-  Popover,
-  Button,
   CircularProgress,
   Alert,
   Grid,
-  Box,
-  Stack,
-  Divider,
-  Typography,
 } from '@mui/material';
 import { useEffect, useState } from 'react';
 import client from '../utils/client';
