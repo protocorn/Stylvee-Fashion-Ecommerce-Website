@@ -3,7 +3,12 @@ import { useState, useEffect, useRef } from 'react';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
 
-const featuredProducts = ['slider1.png', 'slider2.png', 'slider3.jpg'];
+const featuredProducts = [
+  'slider5.jpg',
+  'slider2.jpg',
+  'slider6.jpg',
+  'slider3.jpg',
+];
 
 let count = 0;
 export default function Slider() {
@@ -16,7 +21,7 @@ export default function Slider() {
 
   useEffect(() => {
     slideRef.current.addEventListener('animationend', removeAnimation);
-    startSlider();
+    //startSlider();
   }, []);
 
   const startSlider = () => {
@@ -43,10 +48,13 @@ export default function Slider() {
       </div>
       <div className="absolute w-full top-1/2 transform -translate-y-1/2 px-3 flex justify-between items-center">
         <button onClick={handleOnPrevClick}>
-          <ChevronLeftOutlinedIcon fontSize='large' style={{color:'#fff'}}/>
+          <ChevronLeftOutlinedIcon fontSize="large" style={{ color: '#fff' }} />
         </button>
         <button onClick={handleOnNextClick}>
-          <ChevronRightOutlinedIcon fontSize='large' style={{color:'#fff'}}/>
+          <ChevronRightOutlinedIcon
+            fontSize="large"
+            style={{ color: '#fff' }}
+          />
         </button>
       </div>
     </div>
