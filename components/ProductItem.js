@@ -11,7 +11,7 @@ import { urlForThumbnail } from '../utils/image';
 
 export default function productItem({ product }) {
   return (
-    <div style={{ margin: 'auto' }}>
+    <div style={{ margin: 'auto'}}>
       <Card>
         <NextLink href={`/product/${product.slug.current}`} passHref>
           <CardActionArea>

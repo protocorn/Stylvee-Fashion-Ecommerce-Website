@@ -1,15 +1,12 @@
 import ProductItem from './productItem';
 import ProductItem2 from './productItem2';
 
-import {
-  CircularProgress,
-  Alert,
-  Grid,
-} from '@mui/material';
+import { CircularProgress, Alert, Grid } from '@mui/material';
 import { useEffect, useState } from 'react';
-import client from '../utils/client';
-import { padding } from '@mui/system';
+
 import TrendingItem from './TrendingItem';
+import client from '../utils/client';
+import Slider from './Slider';
 
 const Layout = ({ children }) => {
   const [state, setState] = useState({
@@ -50,9 +47,13 @@ const Layout = ({ children }) => {
   }, []);
   return (
     <div>
+      <div style={{padding: 20}}>
+      <Slider />
+      </div>
+
       <div
         style={{
-          marginTop: 0,
+          marginTop: 20,
         }}
       >
         <div style={{ marginLeft: 20, marginRight: 20, marginTop: 20 }}>
@@ -322,9 +323,9 @@ const Layout = ({ children }) => {
           className="text-center text-gray-700 p-4"
           style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
         >
-          © 2022 Copyright: 
+          © 2022 Copyright:
           <a className="text-gray-800" href="https://tailwind-elements.com/">
-             Stylvee
+            Stylvee
           </a>
         </div>
       </footer>
