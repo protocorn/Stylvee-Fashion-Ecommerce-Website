@@ -2,6 +2,7 @@ import nc from 'next-connect';
 import bcrypt from 'bcryptjs';
 import axios from 'axios';
 import config from '../../../utils/config';
+import signToken from '../../../utils/auth';
 
 const handler = nc();
 
@@ -15,11 +16,12 @@ handler.post(async (req, res) => {
             _type: 'user',
             name: req.body.name,
             email: req.body.email,
-            password: bcrypt.hashASync(req.body.password),
+            password: bcrypt.hashSync(req.body.password),
             isAdmin: false
         }
     }];
     const { data } = await axios.post(`https://${projectId}.api.sanity.io/v1/data/mutate/${dataset}?returnIds=true`,
+    {mutations: createMutations},
         {
             headers: {
                 'Content-type':'application/json',
@@ -27,16 +29,16 @@ handler.post(async (req, res) => {
             }
         }
     );
-    const userid = data.results[0].id;
+    const userId = data.results[0].id;
     const user={
-        _id: userid,
+        _id: userId,
         name: req.body.name,
         email: req.body.email,
         isAdmin: false,
     };
 
     const token=signToken(user);
-    res.sendDate({...user,token})
+    res.send({...user,token})
 })
 
 export default handler;

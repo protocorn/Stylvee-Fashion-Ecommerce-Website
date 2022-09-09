@@ -1,24 +1,35 @@
-import { Button, List, ListItem, TextField, Typography } from '@mui/material';
-import React from 'react'
+import { Button, List, ListItem, TextField, Link } from '@mui/material';
+import React, { useContext, useEffect } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import Form from '../components/Form';
 import NextLink from 'next/link'
-import Link from 'next/link';
 import jsCookie from 'js-cookie'
 import {useRouter} from 'next/router'
+import {Store} from '../utils/Store'
+import { useSnackbar } from 'notistack';
+import axios from 'axios';
 
 export default function RegisterScreen() {
-    const { handleSubmit, control, formState: { errors } } = useForm();
+    const {state, dispatch} =useContext(Store);
+    const {userInfo} =state; 
     const router =useRouter();
+    useEffect(()=>{
+        if(userInfo){
+            router.push('/')
+        }
+    },[router,userInfo])
+    const { enqueueSnackbar } = useSnackbar();
+
+    const { handleSubmit, control, formState: { errors } } = useForm();
     const submitHandler = async (name, email, password) => {
         try {
             const {data}= await axios.post('/api/users/register',{name,email,password});
             dispatch({type:'USER_LOGIN',payload:data});
-            jsCookie.set('userinfo',JSON.stringify(data));
+            jsCookie.set('userInfo',JSON.stringify(data));
             router.push('/')
         }
         catch (err) {
-            err.message
+            enqueueSnackbar(err.message, { variant: 'error' });
         }
     }
     return (
@@ -78,7 +89,7 @@ export default function RegisterScreen() {
                     </Controller>
                 </ListItem>
                 <ListItem>
-                    <button type="submit" style={{ backgroundColor: '#FF6262', padding: '15px 32px', width: '100%' }}><font color="#fff"><b>R E G I S T E R</b></font></button>
+                    <Button type="submit" style={{ backgroundColor: '#FF6262', padding: '15px 32px', width: '100%' }}><font color="#fff"><b>R E G I S T E R</b></font></Button>
                 </ListItem>
                 <ListItem>
                     Already have an account?
