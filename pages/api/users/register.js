@@ -2,7 +2,7 @@ import nc from 'next-connect';
 import bcrypt from 'bcryptjs';
 import axios from 'axios';
 import config from '../../../utils/config';
-import signToken from '../../../utils/auth';
+import {signToken} from '../../../utils/auth';
 
 const handler = nc();
 

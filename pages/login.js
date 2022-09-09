@@ -1,15 +1,35 @@
 import { Button, List, ListItem, TextField, Typography } from '@mui/material';
 import React from 'react'
 import { useForm, Controller } from 'react-hook-form'
+import { useContext, useEffect } from 'react'
 import Form from '../components/Form';
 import NextLink from 'next/link'
 import Link from 'next/link';
+import {useRouter} from 'next/router'
+import {Store} from '../utils/Store'
+import jsCookie from 'js-cookie'
+import axios from 'axios';
+import { useSnackbar } from 'notistack';
+
 
 export default function LoginScreen() {
+    const { state, dispatch } = useContext(Store);
+    const { userInfo } = state;
     const { handleSubmit, control, formState: { errors } } = useForm();
-    const submitHandler = async (email, password) => {
+    const router =useRouter();
 
-    }
+    const { enqueueSnackbar } = useSnackbar();
+    const submitHandler = async ({email, password}) => {
+        try {
+            const {data}= await axios.post('/api/users/login',{email,password});
+            dispatch({type:'USER_LOGIN',payload:data});
+            jsCookie.set('userInfo',JSON.stringify(data));
+            router.push('/');
+        }
+        catch (err) {
+            enqueueSnackbar(err.message,{variant:'error'});
+        }
+    };
     return (
             <Form onSubmit={handleSubmit(submitHandler)} style={{marginTop:30}}>
                 <font size="6" style={{marginLeft:20}}><b>Login</b></font>
@@ -50,7 +70,7 @@ export default function LoginScreen() {
                         </Controller>
                     </ListItem>
                     <ListItem>
-                        <button type="submit" style={{backgroundColor:'#FF6262', padding:'15px 32px', width:'100%'}}><font color="#fff"><b>L O G I  N</b></font></button>
+                        <Button type="submit" style={{backgroundColor:'#FF6262', padding:'15px 32px', width:'100%'}}><font color="#fff"><b>L O G I  N</b></font></Button>
                     </ListItem>
                     <ListItem>
                         Do not have an account on Stylvee?

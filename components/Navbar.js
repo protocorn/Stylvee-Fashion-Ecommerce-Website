@@ -8,14 +8,19 @@ import {
   List,
   ListItem,
   ListItemButton,
+  Link,
 } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 import NextLink from 'next/link'
+import { Store } from '../utils/Store';
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const [anchorEl3, setAnchorEl3] = React.useState(null);
+
+  const [anchorEl4, setAnchorEl4] = React.useState(null);
+
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -29,6 +34,10 @@ const NavBar = () => {
     setAnchorEl3(event.currentTarget);
   };
 
+  const handleClick4 = (event) => {
+    setAnchorEl4(event.currentTarget);
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -40,56 +49,66 @@ const NavBar = () => {
     setAnchorEl3(null);
   };
 
+  const handleClose4 = () => {
+    setAnchorEl4(null);
+  };
+
   const open = Boolean(anchorEl);
   const open2 = Boolean(anchorEl2);
   const open3 = Boolean(anchorEl3);
+  const open4 = Boolean(anchorEl4);
   const id = open ? 'simple-popover' : undefined;
   const id2 = open ? 'simple-popover' : undefined;
   const id3 = open ? 'simple-popover' : undefined;
+  const id4 = open ? 'simple-popover' : undefined;
 
   return (
     <nav className="bg-white shadow-lg flex-wrap">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-              <svg
-                className="hidden h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+            <NextLink href='/' passHref>
+              <Link>
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                >
+                  <span className="sr-only">Open main menu</span>
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                  <svg
+                    className="hidden h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </Link>
+            </NextLink>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
@@ -1159,28 +1178,26 @@ const NavBar = () => {
 
           <div className="pl-10">
             <NextLink href='/cart' passHref>
-            <button
-              type="button"
-              className="inline-flex relative items-center p-1 text-sm font-medium text-center text-white bg-white rounded-lg hover:bg-blue-100"
-            >
-              <img src="https://img.icons8.com/sf-regular/48/000000/shopping-cart.png" />
-              <span className="sr-only">Cart</span>
-              <div className="p-1 inline-flex absolute -top-0 -right-1 justify-center items-center w-wrap h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">
-                20
-              </div>
-            </button>
+              <button
+                type="button"
+                className="inline-flex relative items-center p-1 text-sm font-medium text-center text-white bg-white rounded-lg hover:bg-blue-100"
+              >
+                <img src="https://img.icons8.com/sf-regular/48/000000/shopping-cart.png" />
+                <span className="sr-only">Cart</span>
+                <div className="p-1 inline-flex absolute -top-0 -right-1 justify-center items-center w-wrap h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">
+                  20
+                </div>
+              </button>
             </NextLink>
           </div>
 
           <div className=" absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="ml-3 relative">
               <div>
-                <button
-                  type="button"
-                  className="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                  id="user-menu-button"
-                  aria-expanded="false"
-                  aria-haspopup="true"
+                <Button
+                  variant="image"
+                  aria-describedby={id4}
+                  onClick={handleClick4}
                 >
                   <span className="sr-only">Open user menu</span>
                   <img
@@ -1188,7 +1205,33 @@ const NavBar = () => {
                     src="https://img.icons8.com/material/24/000000/user-male-circle--v1.png"
                     alt=""
                   />
-                </button>
+                </Button>
+                <Popover
+                  id={id4}
+                  open={open4}
+                  anchorEl={anchorEl4}
+                  onClose={handleClose4}
+                  anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                  }}
+                >
+                  {userInfo ? (<List>
+                    <ListItem>
+                      <font size="3"><b>WELCOME</b></font>
+                    </ListItem>
+                    <ListItem style={{ marginRight: 40 }}>
+                      <font size="2">You Need To Sigin To Manage Orders</font>
+                    </ListItem>
+                    <ListItem>
+                      <NextLink href={'/login'} passHref>
+                        <Link style={{ textDecoration: 'none', width: '100%' }}>
+                          <Button type="submit" style={{ backgroundColor: '#FF6262', padding: '10px 15px', width: '100%' }} onClick={{ handleClose4 }}><font color="#fff"><b>REGISTER / LOGIN</b></font></Button>
+                        </Link>
+                      </NextLink>
+                    </ListItem>
+                  </List>) : (<h1>login</h1>)}
+                </Popover>
               </div>
             </div>
           </div>
