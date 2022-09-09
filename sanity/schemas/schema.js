@@ -6,6 +6,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import product from './product'
 import trendingprod from './trendingprod'
 import product2 from './product2'
+import allproducts from './allproducts'
+import user from './user'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -17,6 +19,8 @@ export default createSchema({
         /* Your types here! */
         product,
         trendingprod,
-        product2
+        product2,
+        allproducts,
+        user
     ]),
 })

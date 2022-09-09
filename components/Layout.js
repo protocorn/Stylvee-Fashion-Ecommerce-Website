@@ -1,7 +1,7 @@
 import ProductItem from './productItem';
 import ProductItem2 from './productItem2';
 
-import { CircularProgress, Alert, Grid } from '@mui/material';
+import { CircularProgress, Alert, Grid, Skeleton } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 import TrendingItem from './TrendingItem';
@@ -82,7 +82,7 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {loading ? (
-        <CircularProgress />
+        <Skeleton variant="rectangular" width='match' height={100} style={{marginTop:20}}/>
       ) : error ? (
         <Alert variant="danger">{error}</Alert>
       ) : (
@@ -135,7 +135,7 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {loading1 ? (
-        <CircularProgress />
+        <Skeleton variant="rectangular" width='match' height={100} style={{marginTop:20}}/>
       ) : error1 ? (
         <Alert variant="danger">{error1}</Alert>
       ) : (
@@ -185,7 +185,7 @@ const Layout = ({ children }) => {
         </div>
       </div>
       {loading2 ? (
-        <CircularProgress />
+        <Skeleton variant="rectangular" width='match' height={100} style={{marginTop:35}}/>
       ) : error2 ? (
         <Alert variant="danger">{error2}</Alert>
       ) : (

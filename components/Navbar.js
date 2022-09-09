@@ -10,6 +10,7 @@ import {
   ListItemButton,
 } from '@mui/material';
 import React from 'react';
+import NextLink from 'next/link'
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -138,7 +139,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/t-shirt"
                                 >
                                   <ListItemText primary="T-Shirts" />
                                 </ListItemButton>
@@ -146,7 +147,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/formal-shirt"
                                 >
                                   <ListItemText primary="Formal Shirts" />
                                 </ListItemButton>
@@ -154,7 +155,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/casual-shirt"
                                 >
                                   <ListItemText primary="Casual Shirts" />
                                 </ListItemButton>
@@ -162,7 +163,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/sweatshirt"
                                 >
                                   <ListItemText primary="SweatShirts" />
                                 </ListItemButton>
@@ -170,7 +171,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/jacket"
                                 >
                                   <ListItemText primary="Jackets" />
                                 </ListItemButton>
@@ -178,7 +179,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/blazer-and-coats"
                                 >
                                   <ListItemText primary="Blazers & Coats" />
                                 </ListItemButton>
@@ -195,7 +196,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/kurta"
                                 >
                                   <ListItemText primary="Kurtas" />
                                 </ListItemButton>
@@ -203,7 +204,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/sherwani"
                                 >
                                   <ListItemText primary="Sherwanis" />
                                 </ListItemButton>
@@ -211,7 +212,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/nehru-jacket"
                                 >
                                   <ListItemText primary="Nehru Jackets" />
                                 </ListItemButton>
@@ -219,7 +220,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/kurta-set"
                                 >
                                   <ListItemText primary="Kurta Sets" />
                                 </ListItemButton>
@@ -236,7 +237,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/sunglass"
                                 >
                                   <ListItemText primary="Sunglasses" />
                                 </ListItemButton>
@@ -244,7 +245,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/wallet"
                                 >
                                   <ListItemText primary="Wallets" />
                                 </ListItemButton>
@@ -252,7 +253,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/belt"
                                 >
                                   <ListItemText primary="Belts" />
                                 </ListItemButton>
@@ -260,7 +261,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/perfume-and-deo"
                                 >
                                   <ListItemText primary="Perfumes & Deodrants" />
                                 </ListItemButton>
@@ -268,7 +269,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/cap-and-hat"
                                 >
                                   <ListItemText primary="Caps & Hats" />
                                 </ListItemButton>
@@ -276,7 +277,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/wristband-and-rings"
                                 >
                                   <ListItemText primary="Wristbands & Rings" />
                                 </ListItemButton>
@@ -293,7 +294,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/jeans"
                                 >
                                   <ListItemText primary="Jeans" />
                                 </ListItemButton>
@@ -301,7 +302,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/formal-trouser"
                                 >
                                   <ListItemText primary="Formal Trousers" />
                                 </ListItemButton>
@@ -309,7 +310,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/casual-trouser"
                                 >
                                   <ListItemText primary="Casual Trousers" />
                                 </ListItemButton>
@@ -317,7 +318,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/shorts"
                                 >
                                   <ListItemText primary="Shorts" />
                                 </ListItemButton>
@@ -325,7 +326,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/joggers-and-trackpants"
                                 >
                                   <ListItemText primary="Joggers & Track Pants" />
                                 </ListItemButton>
@@ -342,7 +343,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/briefs"
                                 >
                                   <ListItemText primary="Briefs" />
                                 </ListItemButton>
@@ -350,7 +351,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/boxer"
                                 >
                                   <ListItemText primary="Boxers" />
                                 </ListItemButton>
@@ -358,7 +359,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/thermal-underwear"
                                 >
                                   <ListItemText primary="Thermal Underwear" />
                                 </ListItemButton>
@@ -366,7 +367,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/trunk"
                                 >
                                   <ListItemText primary="Trunks" />
                                 </ListItemButton>
@@ -374,7 +375,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/vest"
                                 >
                                   <ListItemText primary="Vests" />
                                 </ListItemButton>
@@ -391,7 +392,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/shoes-and-sandal"
                                 >
                                   <ListItemText primary="Sports Shoes & Sandals" />
                                 </ListItemButton>
@@ -399,7 +400,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/tracksuit"
                                 >
                                   <ListItemText primary="Tracksuits" />
                                 </ListItemButton>
@@ -407,7 +408,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/active-t-shirt"
                                 >
                                   <ListItemText primary="Active T-shirts" />
                                 </ListItemButton>
@@ -415,16 +416,15 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/swimwear"
                                 >
-                                  <ListItemText primary="Swimwear" />
+                                  <ListItemText primary="Swimwears" />
                                 </ListItemButton>
                               </ListItem>
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
-                                >
+                                  href="/product/sports-accessories">
                                   <ListItemText primary="Sports Accessories" />
                                 </ListItemButton>
                               </ListItem>
@@ -468,7 +468,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/top-and-dress"
                                 >
                                   <ListItemText primary="Tops & Dresses" />
                                 </ListItemButton>
@@ -476,7 +476,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/jeans-women"
                                 >
                                   <ListItemText primary="Jeans" />
                                 </ListItemButton>
@@ -484,7 +484,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/t-shirt-women"
                                 >
                                   <ListItemText primary="T-Shirts" />
                                 </ListItemButton>
@@ -492,7 +492,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/shorts-and-skirt"
                                 >
                                   <ListItemText primary="Shorts & Skirts" />
                                 </ListItemButton>
@@ -500,7 +500,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/trouser"
                                 >
                                   <ListItemText primary="Trousers" />
                                 </ListItemButton>
@@ -508,7 +508,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/jumpsuit"
                                 >
                                   <ListItemText primary="Jumpsuits" />
                                 </ListItemButton>
@@ -516,7 +516,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/sweater-and-sweatshirt"
                                 >
                                   <ListItemText primary="Sweaters & Sweatshirts" />
                                 </ListItemButton>
@@ -524,7 +524,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/jacket-and-coat"
                                 >
                                   <ListItemText primary="Jacket & Coats" />
                                 </ListItemButton>
@@ -532,7 +532,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/blazer"
                                 >
                                   <ListItemText primary="Blazers" />
                                 </ListItemButton>
@@ -549,7 +549,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/ethnic-wear"
                                 >
                                   <ListItemText primary="Ethnic Wear" />
                                 </ListItemButton>
@@ -557,7 +557,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/saree"
                                 >
                                   <ListItemText primary="Sarees" />
                                 </ListItemButton>
@@ -565,7 +565,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/kurta-and-suit"
                                 >
                                   <ListItemText primary="Kurtas & Suits" />
                                 </ListItemButton>
@@ -573,7 +573,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/skirt-and-plazzo"
                                 >
                                   <ListItemText primary="Skirts & Palazzos" />
                                 </ListItemButton>
@@ -581,7 +581,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/dress-material"
                                 >
                                   <ListItemText primary="Dress Materials" />
                                 </ListItemButton>
@@ -589,7 +589,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/lehnga-choli"
                                 >
                                   <ListItemText primary="Lehnga Cholis" />
                                 </ListItemButton>
@@ -597,7 +597,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/dupatta-shawl"
                                 >
                                   <ListItemText primary="Dupattas & Shawls" />
                                 </ListItemButton>
@@ -614,7 +614,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/bra"
                                 >
                                   <ListItemText primary="Bra" />
                                 </ListItemButton>
@@ -622,7 +622,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/brief"
                                 >
                                   <ListItemText primary="Briefs" />
                                 </ListItemButton>
@@ -630,7 +630,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/sleepwear-and-loungewear"
                                 >
                                   <ListItemText primary="Sleepwear & Loungewear" />
                                 </ListItemButton>
@@ -638,7 +638,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/shorts-women"
                                 >
                                   <ListItemText primary="Shorts" />
                                 </ListItemButton>
@@ -646,7 +646,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/thermals"
                                 >
                                   <ListItemText primary="Thermals" />
                                 </ListItemButton>
@@ -663,7 +663,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/fashion-jewellery"
                                 >
                                   <ListItemText primary="Fashion Jewellery" />
                                 </ListItemButton>
@@ -671,7 +671,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/fine-jewellery"
                                 >
                                   <ListItemText primary="Fine Jewellery" />
                                 </ListItemButton>
@@ -679,7 +679,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/earing"
                                 >
                                   <ListItemText primary="Earings" />
                                 </ListItemButton>
@@ -696,7 +696,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/footwear"
                                 >
                                   <ListItemText primary="Footwears" />
                                 </ListItemButton>
@@ -704,7 +704,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/swimwear-women"
                                 >
                                   <ListItemText primary="Swimwear" />
                                 </ListItemButton>
@@ -712,7 +712,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/active-t-shirt-women"
                                 >
                                   <ListItemText primary="Active T-shirts" />
                                 </ListItemButton>
@@ -720,7 +720,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/sports-accessories-women"
                                 >
                                   <ListItemText primary="Sports Accessories" />
                                 </ListItemButton>
@@ -737,7 +737,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/makeup"
                                 >
                                   <ListItemText primary="Makeup" />
                                 </ListItemButton>
@@ -745,7 +745,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/skincare"
                                 >
                                   <ListItemText primary="Skincare" />
                                 </ListItemButton>
@@ -753,7 +753,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/lipstick"
                                 >
                                   <ListItemText primary="Lipsticks" />
                                 </ListItemButton>
@@ -761,7 +761,7 @@ const NavBar = () => {
                               <ListItem disablePadding>
                                 <ListItemButton
                                   component="a"
-                                  href="#simple-list"
+                                  href="/product/perfume-and-deo-women"
                                 >
                                   <ListItemText primary="Perfumes & Deodrants" />
                                 </ListItemButton>
@@ -1158,6 +1158,7 @@ const NavBar = () => {
           </form>
 
           <div className="pl-10">
+            <NextLink href='/cart' passHref>
             <button
               type="button"
               className="inline-flex relative items-center p-1 text-sm font-medium text-center text-white bg-white rounded-lg hover:bg-blue-100"
@@ -1168,6 +1169,7 @@ const NavBar = () => {
                 20
               </div>
             </button>
+            </NextLink>
           </div>
 
           <div className=" absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
