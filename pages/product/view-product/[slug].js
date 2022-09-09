@@ -16,7 +16,7 @@ export default function ViewProductScreen(props) {
     const [state, setState] = useState({
         product: null,
         loading: true,
-        error: ''
+        error: ''   
     });
 
     const [alignment, setAlignment] = React.useState('web');
