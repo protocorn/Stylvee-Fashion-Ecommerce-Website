@@ -9,17 +9,23 @@ import {
   ListItem,
   ListItemButton,
   Link,
+  Typography,
+  Divider,
 } from '@mui/material';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
+import React from 'react'
 import NextLink from 'next/link'
 import { Store } from '../utils/Store';
+import Cookies from 'js-cookie';
 
-const NavBar = () => {
+export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const [anchorEl3, setAnchorEl3] = React.useState(null);
 
   const [anchorEl4, setAnchorEl4] = React.useState(null);
+
+  const userInfo = Cookies.get('userInfo') ? JSON.parse(Cookies.get('userInfo')) : null;
 
 
   const handleClick = (event) => {
@@ -1216,21 +1222,42 @@ const NavBar = () => {
                     horizontal: 'left',
                   }}
                 >
-                  {userInfo ? (<List>
-                    <ListItem>
-                      <font size="3"><b>WELCOME</b></font>
-                    </ListItem>
-                    <ListItem style={{ marginRight: 40 }}>
-                      <font size="2">You Need To Sigin To Manage Orders</font>
+                  {userInfo ? (<List style={{ minWidth: 250, maxWidth: 300 }}>
+                    <ListItem style={{ marginRight: 30 }}>
+                      <font size="4">Hello <b> {userInfo.name} </b>!!!</font>
                     </ListItem>
                     <ListItem>
-                      <NextLink href={'/login'} passHref>
-                        <Link style={{ textDecoration: 'none', width: '100%' }}>
-                          <Button type="submit" style={{ backgroundColor: '#FF6262', padding: '10px 15px', width: '100%' }} onClick={{ handleClose4 }}><font color="#fff"><b>REGISTER / LOGIN</b></font></Button>
-                        </Link>
-                      </NextLink>
+                      <Divider style={{ width: '100%' }}></Divider>
                     </ListItem>
-                  </List>) : (<h1>login</h1>)}
+                    <ListItem>Orders</ListItem>
+                    <ListItem style={{marginTop:-10}}>Wishlist</ListItem>
+                    <ListItem style={{marginTop:-10}}>Contact Us</ListItem>
+                    <ListItem>
+                      <Divider style={{ width: '100%' }}></Divider>
+                    </ListItem>
+                    <ListItem>Saved Cards</ListItem>
+                    <ListItem style={{marginTop:-10}}>Saved Address</ListItem>
+                    <ListItem>
+                      <Divider style={{ width: '100%' }}></Divider>
+                    </ListItem>
+                    <ListItem>My Profile</ListItem>
+                    <ListItem style={{marginTop:-10}}>Logout  </ListItem>
+                  </List>) : (
+                    <List>
+                      <ListItem>
+                        <font size="3"><b>WELCOME</b></font>
+                      </ListItem>
+                      <ListItem style={{ marginRight: 40 }}>
+                        <font size="2">You Need To Sigin To Manage Orders</font>
+                      </ListItem>
+                      <ListItem>
+                        <NextLink href={'/login'} passHref>
+                          <Link style={{ textDecoration: 'none', width: '100%' }}>
+                            <Button type="submit" style={{ backgroundColor: '#FF6262', padding: '10px 15px', width: '100%' }} onClick={{ handleClose4 }}><font color="#fff"><b>REGISTER / LOGIN</b></font></Button>
+                          </Link>
+                        </NextLink>
+                      </ListItem>
+                    </List>)}
                 </Popover>
               </div>
             </div>
@@ -1264,6 +1291,4 @@ const NavBar = () => {
       </div>
     </nav>
   );
-};
-
-export default NavBar;
+}

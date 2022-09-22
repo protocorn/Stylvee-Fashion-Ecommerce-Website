@@ -4,29 +4,36 @@ import { useForm, Controller } from 'react-hook-form'
 import Form from '../components/Form';
 import NextLink from 'next/link'
 import jsCookie from 'js-cookie'
-import {useRouter} from 'next/router'
-import {Store} from '../utils/Store'
+import { useRouter } from 'next/router'
+import { Store } from '../utils/Store'
 import { useSnackbar } from 'notistack';
 import axios from 'axios';
 
 export default function RegisterScreen() {
-    const {state, dispatch} =useContext(Store);
-    const {userInfo} =state; 
-    const router =useRouter();
-    const { enqueueSnackbar } = useSnackbar();
+    const { state, dispatch } = useContext(Store);
+    const { userInfo } = state;
+    const router = useRouter();
 
-    const { handleSubmit, control, formState: { errors } } = useForm();
-    const submitHandler = async ({name, email, password}) => {
+    const { redirect } = router.query;
+    useEffect(() => {
+        if (userInfo) {
+            router.push(redirect || '/');
+        }
+    }, [router, userInfo, redirect]);
+
+    const { handleSubmit, control, formState: { errors }, } = useForm();
+    const { enqueueSnackbar } = useSnackbar();
+    const submitHandler = async ({ name, email, password }) => {
         try {
-            const {data}= await axios.post('/api/users/register',{name,email,password});
-            dispatch({type:'USER_LOGIN',payload:data});
-            jsCookie.set('userInfo',JSON.stringify(data));
+            const { data } = await axios.post('/api/users/register', { name, email, password });
+            dispatch({ type: 'USER_LOGIN', payload: data });
+            jsCookie.set('userInfo', JSON.stringify(data));
             router.push('/');
         }
         catch (err) {
-            enqueueSnackbar(err.message,{variant:'error'});
+            enqueueSnackbar(err.message, { variant: 'error' });
         }
-    }
+    };
     return (
         <Form onSubmit={handleSubmit(submitHandler)} style={{ marginTop: 30 }}>
             <font size="6" style={{ marginLeft: 20 }}><b>Register</b></font>
