@@ -26,6 +26,11 @@ export default {
         type: 'string',
     },
     {
+        name: 'keywords',
+        title: 'Keywords',
+        type: 'string',
+    },
+    {
         name: 'originalprice',
         title: 'OriginalPrice',
         type: 'number',

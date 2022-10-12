@@ -17,6 +17,13 @@ export default function LoginScreen() {
     const { userInfo } = state;
     const { handleSubmit, control, formState: { errors } } = useForm();
     const router =useRouter();
+    const {redirect}= router.query;
+
+    useEffect(()=>{
+        if(userInfo){
+            router.push(redirect || '/')
+        }
+    },[router,userInfo,redirect])
 
     const { enqueueSnackbar } = useSnackbar();
     const submitHandler = async ({email, password}) => {
@@ -24,7 +31,7 @@ export default function LoginScreen() {
             const {data}= await axios.post('/api/users/login',{email,password});
             dispatch({type:'USER_LOGIN',payload:data});
             jsCookie.set('userInfo',JSON.stringify(data));
-            router.push('/');
+            router.push(redirect || '/');
         }
         catch (err) {
             enqueueSnackbar(err.message,{variant:'error'});
@@ -74,7 +81,7 @@ export default function LoginScreen() {
                     </ListItem>
                     <ListItem>
                         Do not have an account on Stylvee?
-                        <NextLink href={'/register'} passHref><Link>
+                        <NextLink href={`/register?redirect=${redirect || '/'}`} passHref><Link>
                             <font color="#F66D0A"><u> Register Now</u></font>
                         </Link></NextLink>
                     </ListItem>

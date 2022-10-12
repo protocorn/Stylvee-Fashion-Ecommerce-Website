@@ -1,5 +1,5 @@
-import { Alert, Button, CircularProgress, Divider, Grid, Stack, ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { Box, style } from "@mui/system";
+import { Alert, CircularProgress, Divider, Grid, Stack, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Box} from "@mui/system";
 import { useContext, useEffect, useState } from "react";
 import client from "../../../utils/client";
 import { useSnackbar } from 'notistack';
@@ -8,6 +8,7 @@ import Image from "next/image";
 import React from "react";
 import axios from 'axios';
 import { Store } from "../../../utils/Store";
+import { useRouter } from 'next/router'
 
 export default function ViewProductScreen(props) {
     const { slug } = props;
@@ -19,7 +20,8 @@ export default function ViewProductScreen(props) {
         error: ''   
     });
 
-    const [alignment, setAlignment] = React.useState('web');
+    const [size, setAlignment] = React.useState('web');
+    const router = useRouter();
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
@@ -55,11 +57,13 @@ export default function ViewProductScreen(props) {
                 originalprice: product.originalprice,
                 finalprice: product.finalprice,
                 image: urlForThumbnail(product.image),
-                p_key: product.key,
+                p_key: product.key.current,
                 quantity,
+                size,
             },
         });
         enqueueSnackbar(`${product.name} added`, { variant: 'success' });
+        router.push('/cart')
     };
 
     return (
@@ -99,7 +103,7 @@ export default function ViewProductScreen(props) {
                             <br></br>
                             <ToggleButtonGroup
                                 color="warning"
-                                value={alignment}
+                                value={size}
                                 exclusive
                                 onChange={handleChange}
                                 aria-label="Platform"

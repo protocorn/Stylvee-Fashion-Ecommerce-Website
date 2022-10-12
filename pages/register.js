@@ -28,7 +28,7 @@ export default function RegisterScreen() {
             const { data } = await axios.post('/api/users/register', { name, email, password });
             dispatch({ type: 'USER_LOGIN', payload: data });
             jsCookie.set('userInfo', JSON.stringify(data));
-            router.push('/');
+            router.push(redirect || '/');
         }
         catch (err) {
             enqueueSnackbar(err.message, { variant: 'error' });
@@ -95,7 +95,7 @@ export default function RegisterScreen() {
                 </ListItem>
                 <ListItem>
                     Already have an account?
-                    <NextLink href={'/register'} passHref><Link>
+                    <NextLink href={`/login?redirect=${redirect || '/'}`} passHref><Link>
                         <font color="#F66D0A"><u>Login</u></font>
                     </Link></NextLink>
                 </ListItem>

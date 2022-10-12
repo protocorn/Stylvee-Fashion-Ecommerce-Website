@@ -8,6 +8,10 @@ import trendingprod from './trendingprod'
 import product2 from './product2'
 import allproducts from './allproducts'
 import user from './user'
+import order from './order'
+import orderitem from './orderitem'
+import shippingAddress from './shippingAddress'
+import payementresult from './payementresult'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,6 +25,10 @@ export default createSchema({
         trendingprod,
         product2,
         allproducts,
-        user
+        user,
+        order,
+        orderitem,
+        shippingAddress,
+        payementresult
     ]),
 })

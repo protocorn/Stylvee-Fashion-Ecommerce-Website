@@ -9,24 +9,27 @@ import {
   ListItem,
   ListItemButton,
   Link,
-  Typography,
   Divider,
 } from '@mui/material';
-import { useContext } from 'react';
-import React from 'react'
+import React, {useState} from 'react'
 import NextLink from 'next/link'
-import { Store } from '../utils/Store';
 import Cookies from 'js-cookie';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import jsCookie from 'js-cookie';
 
-export default function NavBar() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [anchorEl2, setAnchorEl2] = React.useState(null);
-  const [anchorEl3, setAnchorEl3] = React.useState(null);
+function NavBar() {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
+  const [anchorEl3, setAnchorEl3] = useState(null);
+  const [anchorEl4, setAnchorEl4] = useState(null);
+  const [query,setQuery] =useState('');
 
-  const [anchorEl4, setAnchorEl4] = React.useState(null);
+
+  const cart = Cookies.get('cartItems') ? JSON.parse(Cookies.get('cartItems')) : [];
 
   const userInfo = Cookies.get('userInfo') ? JSON.parse(Cookies.get('userInfo')) : null;
-
+  const router= useRouter();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -59,6 +62,14 @@ export default function NavBar() {
     setAnchorEl4(null);
   };
 
+  const queryChangedHandler=(e)=>{
+    setQuery(e.target.value);
+  };
+  const submitHandler=(e)=>{
+    e.preventDefault();
+    router.push(`/search?query=${query}`)
+  }
+
   const open = Boolean(anchorEl);
   const open2 = Boolean(anchorEl2);
   const open3 = Boolean(anchorEl3);
@@ -73,13 +84,12 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <NextLink href='/' passHref>
-              <Link>
                 <button
                   type="button"
                   className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
+                  onClick={()=>router.push('/')}
                 >
                   <span className="sr-only">Open main menu</span>
                   <svg
@@ -113,8 +123,6 @@ export default function NavBar() {
                     />
                   </svg>
                 </button>
-              </Link>
-            </NextLink>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0 flex items-center">
@@ -127,6 +135,7 @@ export default function NavBar() {
                 className="hidden lg:block h-8 w-auto"
                 src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
                 alt="Workflow"
+                onClick={()=>router.push('/')}
               />
             </div>
             <div className="hidden sm:block sm:ml-6 items-center">
@@ -1132,7 +1141,7 @@ export default function NavBar() {
             </div>
           </div>
 
-          <form className="flex items-center">
+          <form className="flex items-center" onSubmit={submitHandler}>
             <label htmlFor="simple-search" className="sr-only">
               Search
             </label>
@@ -1158,6 +1167,7 @@ export default function NavBar() {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search for Categories, Products or more..."
                 required
+                onChange={queryChangedHandler}
               />
             </div>
             <button
@@ -1191,7 +1201,7 @@ export default function NavBar() {
                 <img src="https://img.icons8.com/sf-regular/48/000000/shopping-cart.png" />
                 <span className="sr-only">Cart</span>
                 <div className="p-1 inline-flex absolute -top-0 -right-1 justify-center items-center w-wrap h-6 text-xs font-bold text-white bg-red-500 rounded-full border-2 border-white dark:border-gray-900">
-                  20
+                  <font size="3">{cart.length}</font>
                 </div>
               </button>
             </NextLink>
@@ -1229,7 +1239,7 @@ export default function NavBar() {
                     <ListItem>
                       <Divider style={{ width: '100%' }}></Divider>
                     </ListItem>
-                    <ListItem>Orders</ListItem>
+                    <ListItem><a href='/order-history' onClick={{handleClose4}}>My Orders</a></ListItem>
                     <ListItem style={{marginTop:-10}}>Wishlist</ListItem>
                     <ListItem style={{marginTop:-10}}>Contact Us</ListItem>
                     <ListItem>
@@ -1292,3 +1302,4 @@ export default function NavBar() {
     </nav>
   );
 }
+export default dynamic(() => Promise.resolve(NavBar), { ssr: false });
