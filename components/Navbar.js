@@ -1238,7 +1238,7 @@ function NavBar() {
                     <ListItem>
                       <Divider style={{ width: '100%' }}></Divider>
                     </ListItem>
-                    <ListItem><a href='/order-history' onClick={{handleClose4}}>My Orders</a></ListItem>
+                    <ListItem><Link href='/order-history' onClick={{handleClose4}}>My Orders</Link></ListItem>
                     <ListItem style={{marginTop:-10}}>Wishlist</ListItem>
                     <ListItem style={{marginTop:-10}}>Contact Us</ListItem>
                     <ListItem>
