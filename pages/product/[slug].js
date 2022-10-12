@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import client from "../../utils/client";
-import { Alert, Box, Card, CardActionArea, CardMedia, CircularProgress, Grid, Link, Skeleton, Stack, Typography } from "@mui/material";
-import NextLink from 'next/link'
+import { Alert, Box, Grid, Skeleton} from "@mui/material";
 import { urlForThumbnail } from "../../utils/image";
 import Image from "next/image";
 

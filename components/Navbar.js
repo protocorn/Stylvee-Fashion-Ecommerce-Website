@@ -16,7 +16,6 @@ import NextLink from 'next/link'
 import Cookies from 'js-cookie';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import jsCookie from 'js-cookie';
 
 function NavBar() {
   const [anchorEl, setAnchorEl] = useState(null);

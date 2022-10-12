@@ -1,14 +1,14 @@
 import ProductItem from './productItem';
 import ProductItem2 from './productItem2';
 
-import { CircularProgress, Alert, Grid, Skeleton } from '@mui/material';
+import { Alert, Grid, Skeleton } from '@mui/material';
 import { useEffect, useState } from 'react';
 
 import TrendingItem from './TrendingItem';
 import client from '../utils/client';
 import Slider from './Slider';
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const [state, setState] = useState({
     products: [],
     error: '',
