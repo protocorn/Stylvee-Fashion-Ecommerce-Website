@@ -10,6 +10,7 @@ import Form from '../components/Form';
 import { Store } from '../utils/Store';
 
 function ProfileScreen() {
+  //profile
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { userInfo } = state;
