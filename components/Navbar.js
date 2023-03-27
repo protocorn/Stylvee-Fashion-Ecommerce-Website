@@ -11,7 +11,7 @@ import {
   Link,
   Divider,
 } from '@mui/material';
-import React, {useState} from 'react'
+import React, { useState} from 'react'
 import NextLink from 'next/link'
 import Cookies from 'js-cookie';
 import dynamic from 'next/dynamic';
@@ -27,8 +27,19 @@ function NavBar() {
 
   const cart = Cookies.get('cartItems') ? JSON.parse(Cookies.get('cartItems')) : [];
 
-  const userInfo = Cookies.get('userInfo') ? JSON.parse(Cookies.get('userInfo')) : null;
+  var userInfo = Cookies.get('userInfo') ? JSON.parse(Cookies.get('userInfo')) : null;
   const router= useRouter();
+  //const {dispatch} = useContext(Store);
+
+  const logoutHandler=()=>{
+    userInfo=null
+    //dispatch({ type: 'USER_LOGOUT' });
+    Cookies.remove('userInfo');
+    Cookies.remove('cartItems');
+    Cookies.remove('shippingAddress');
+    Cookies.remove('paymentMethod');
+    router.push('/')
+  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -127,13 +138,13 @@ function NavBar() {
             <div className="flex-shrink-0 flex items-center">
               <img
                 className="block lg:hidden h-10 w-auto"
-                src="stylvee_logo.jpeg"
-                alt="Workflow"
+                src="/stylvee_logo.jpeg"
+                alt="Stylvee"
               />
               <img
                 className="hidden lg:block h-10 w-auto"
-                src="stylvee_logo.jpeg"
-                alt="Workflow"
+                src="/stylvee_logo.jpeg"
+                alt="Stylvee"
                 onClick={()=>router.push('/')}
               />
             </div>
@@ -1238,7 +1249,7 @@ function NavBar() {
                     <ListItem>
                       <Divider style={{ width: '100%' }}></Divider>
                     </ListItem>
-                    <ListItem><Link href='/order-history' onClick={{handleClose4}}>My Orders</Link></ListItem>
+                    <ListItem><Link href='/order-history'>My Orders</Link></ListItem>
                     <ListItem style={{marginTop:-10}}>Wishlist</ListItem>
                     <ListItem style={{marginTop:-10}}>Contact Us</ListItem>
                     <ListItem>
@@ -1249,8 +1260,8 @@ function NavBar() {
                     <ListItem>
                       <Divider style={{ width: '100%' }}></Divider>
                     </ListItem>
-                    <ListItem>My Profile</ListItem>
-                    <ListItem style={{marginTop:-10}}>Logout  </ListItem>
+                    <ListItem><Link href='/profile' passHref>My Profile</Link></ListItem>
+                    <ListItem style={{marginTop:-10}}><Button onClick={()=>logoutHandler()}>Logout</Button></ListItem>
                   </List>) : (
                     <List>
                       <ListItem>

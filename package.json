@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "server": "node server.mjs"
     },
     "dependencies": {
         "@emotion/react": "^11.10.0",
@@ -18,10 +19,14 @@
         "@sanity/image-url": "^1.0.1",
         "axios": "^0.27.2",
         "bcryptjs": "^2.4.3",
+        "child_process": "^1.0.2",
+        "emailjs": "^4.0.1",
+        "express": "^4.18.2",
         "js-cookie": "^3.0.1",
         "jsonwebtoken": "^8.5.1",
         "next": "^12.2.5",
         "next-connect": "^0.13.0",
+        "nodemailer": "^6.8.0",
         "notistack": "^2.0.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -33,5 +38,9 @@
         "eslint-config-next": "12.2.5",
         "postcss": "^8.4.16",
         "tailwindcss": "^3.1.8"
+    },
+    "browser": {
+        "fs": false,
+        "child_process": false
     }
 }

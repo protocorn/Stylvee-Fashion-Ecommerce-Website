@@ -1,10 +1,10 @@
 import axios from 'axios';
 import nc from 'next-connect';
-import { isAuth } from '../../../../utils/auth';
-import config from '../../../../utils/config';
+
+import { isAuth } from 'D:/Users/Sahil/Next.js Apps/stylvee2/utils/auth.js';
+import config from 'D:/Users/Sahil/Next.js Apps/stylvee2/utils/config.js';
 
 const handler = nc();
-
 handler.use(isAuth);
 handler.put(async (req, res) => {
   const tokenWithWriteAccess = process.env.SANITY_AUTH_TOKEN;

@@ -14,6 +14,7 @@ const initialState = {
             : '',
     },
     userInfo: Cookies.get('userInfo') ? JSON.parse(Cookies.get('userInfo')) : null,
+    product : Cookies.get('product') ? JSON.parse(Cookies.get('product')) : null,
 };
 
 function reducer(state, action) {
@@ -53,6 +54,15 @@ function reducer(state, action) {
                     paymentMethod: action.payload,
                 },
             };
+            case 'USER_LOGOUT':
+                return {
+                  ...state,
+                  userInfo: null,
+                  cart: {
+                    cartItems: [],
+                    shippingAddress: {},
+                  },
+                };
         default:
             return state;
     }

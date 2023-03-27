@@ -1,5 +1,5 @@
-import { Alert, CircularProgress, Divider, Grid, Stack, ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { Box} from "@mui/system";
+import { Alert, CircularProgress, Divider, Grid, Stack, ToggleButton, ToggleButtonGroup,Link} from "@mui/material";
+import { Box } from "@mui/system";
 import { useContext, useEffect, useState } from "react";
 import client from "../../../utils/client";
 import { useSnackbar } from 'notistack';
@@ -9,6 +9,7 @@ import React from "react";
 import axios from 'axios';
 import { Store } from "../../../utils/Store";
 import { useRouter } from 'next/router'
+import NextLink from "next/link";
 
 export default function ViewProductScreen(props) {
     const { slug } = props;
@@ -17,24 +18,29 @@ export default function ViewProductScreen(props) {
     const [state, setState] = useState({
         product: null,
         loading: true,
-        error: ''   
+        error: ''
     });
 
-    const [size, setAlignment] = React.useState('web');
+    const [size, setAlignment] = useState('web');
     const router = useRouter();
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
     };
     const { product, loading, error } = state;
+    const [rec, setRec] = useState([])
+
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const response = await fetch(`http://localhost:3000/api/recommend`)
+                const data = await response.json()
+                console.log(data)
+                setRec(data)
                 const product = await client.fetch(`*[_type=="allproducts" && key.current==$slug][0]`, { slug });
                 setState({ product, loading: false });
             }
             catch (err) {
-
                 setState({ error: err.message, loading: false });
             }
         };
@@ -74,6 +80,7 @@ export default function ViewProductScreen(props) {
                 <Alert variant="danger">{error}</Alert>
             ) : (
                 <div>
+
                     <Stack direction="row" spacing={2}>
                         <Box sx={{ width: screen.width / 2 }}>
                             <Grid container width="wrap" wrap="wrap" columns={3}>
@@ -167,7 +174,16 @@ export default function ViewProductScreen(props) {
                             </div>
                         </div>
                     </Stack>
-                    <font size="4" style={{ fontWeight: '500', margin: 20 }}>Review and Ratings</font>
+                    <font size="4" style={{ fontWeight: '500', margin: 20 }}>Products We Think May Amaze You!!</font>
+                    <Box sx={{ width: screen.width }}>
+                        <Grid container width="wrap" wrap="wrap" columns={5}>
+                            {rec.products.map((prod) => (
+                                <Grid item margin={2} md={1} key={prod.key}>
+                                    <NextLink href={`http://localhost:3000/search?query=${prod}`} passHref><Link>{prod}</Link></NextLink>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    </Box>
                 </div >
             )
             }

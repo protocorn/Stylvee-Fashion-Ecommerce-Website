@@ -6,7 +6,7 @@ import config from '../../../utils/config';
 const handler=nc();
 
 handler.use(isAuth)
-
+  
 handler.post(async (req, res) => {
     const projectId = config.projectId;
     const dataset = config.dataset;

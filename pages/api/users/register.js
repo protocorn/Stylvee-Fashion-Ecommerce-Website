@@ -4,6 +4,7 @@ import axios from 'axios';
 import config from '../../../utils/config';
 import { signToken } from '../../../utils/auth';
 import client from '../../../utils/client';
+import nodemailer from "nodemailer";
 
 const handler = nc();
 
@@ -49,6 +50,28 @@ handler.post(async (req, res) => {
 
     const token = signToken(user);
     res.send({ ...user, token })
+
+    const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASSWORD
+        }
+      });
+    
+      try {
+        await transporter.sendMail({
+          from: "stylvee@gmail.com",
+          to: req.body.email,
+          subject: `Verification Link For Stylvee Account`,
+          html: `<h1>http://localhost:3000?token=${token}</h1>`
+        });
+      } catch (error) {
+        return res.status(500).json({ error: error.message || error.toString() });
+      }
+      return res.status(200).json({ error: "" });
 });
 
 export default handler;
