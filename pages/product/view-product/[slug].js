@@ -171,7 +171,6 @@ export default function ViewProductScreen(props) {
                     <font size="4" style={{ fontWeight: '500', margin: 20 }}>Products We Think May Amaze You!!</font>
                     <Box sx={{ width: screen.width }}>
                         <Grid container width="wrap" wrap="wrap" columns={5}>
-                        
                         </Grid>
                     </Box>
                 </div >

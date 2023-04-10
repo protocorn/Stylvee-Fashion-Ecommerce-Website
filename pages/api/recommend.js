@@ -7,8 +7,8 @@ export default function handler(req, res) {
     const python = spawn('python', ['ml_model/products_recommendation.py',prod]);
     // collect data from script
     python.stdout.on('data', function (data) {
-     console.log('Pipe data from python script ...');
-     dataToSend = data.toString();
+    console.log('Pipe data from python script ...');
+    dataToSend = data.toString();
     });
     const l1=[]
     var count=0;
