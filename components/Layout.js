@@ -1,5 +1,5 @@
-import ProductItem from './productItem';
-import ProductItem2 from './productItem2';
+import ProductItem from './ProductItem';
+import ProductItem2 from './ProductItem2';
 
 import { Alert, Grid, Skeleton } from '@mui/material';
 import { useEffect, useState } from 'react';
