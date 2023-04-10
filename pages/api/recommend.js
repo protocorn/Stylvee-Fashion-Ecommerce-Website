@@ -1,7 +1,7 @@
 const {spawn} = require('child_process');
 
 export default function handler(req, res) {
-    const prod = "BlackT-Shirt";
+    const prod = "Black T-Shirt";
     var dataToSend;
     // spawn new child process to call the python script
     const python = spawn('python', ['ml_model/products_recommendation.py',prod]);
