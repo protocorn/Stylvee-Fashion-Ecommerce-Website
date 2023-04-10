@@ -35,6 +35,9 @@ export default function PaymentScreen() {
   return (
     <div>
     <CheckOutWizard activeStep={2}></CheckOutWizard>
+    <script>
+        
+    </script>
     <Form onSubmit={submitHandler}>
         <Typography variant="h4" style={{margin:20}}>Select Payment Method</Typography>
         <List>

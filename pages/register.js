@@ -1,5 +1,5 @@
 import { Button, List, ListItem, TextField, Link } from '@mui/material';
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import Form from '../components/Form';
 import NextLink from 'next/link'
@@ -10,16 +10,15 @@ import { useSnackbar } from 'notistack';
 import axios from 'axios';
 
 export default function RegisterScreen() {
-    const { state, dispatch } = useContext(Store);
-    const { userInfo } = state;
+    const {dispatch } = useContext(Store);
     const router = useRouter();
 
     const { redirect } = router.query;
-    useEffect(() => {
+    /*useEffect(() => {
         if (userInfo) {
             router.push(redirect || '/');
         }
-    }, [router, userInfo, redirect]);
+    }, [router, userInfo, redirect]);*/
 
     const { handleSubmit, control, formState: { errors }, } = useForm();
     const { enqueueSnackbar } = useSnackbar();
@@ -28,7 +27,7 @@ export default function RegisterScreen() {
             const { data } = await axios.post('/api/users/register', { name, email, password });
             dispatch({ type: 'USER_LOGIN', payload: data });
             jsCookie.set('userInfo', JSON.stringify(data));
-            router.push(redirect || '/');
+            //router.push(redirect || '/');
         }
         catch (err) {
             enqueueSnackbar(err.message, { variant: 'error' });
