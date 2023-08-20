@@ -1,6 +1,8 @@
 # Stylvee: Clothing and Wearable E-commerce Website
 
-![Stylvee Logo](https://main.divhf1lph4xju.amplifyapp.com/stylvee_logo.jpeg)
+<p align="center">
+  <img src="(https://main.divhf1lph4xju.amplifyapp.com/stylvee_logo.jpeg)" alt="Stylvee Logo" width="200">
+</p>
 
 Stylvee is a modern and user-friendly e-commerce website that specializes in clothing and wearables for men, women, and kids. This repository contains the complete source code for the website, which is built using React.js and Next.js for the frontend and Sanity.io for managing products and user authentication. The website also employs machine learning techniques to offer users a personalized experience by showcasing similar items.
 
