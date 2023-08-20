@@ -11,7 +11,7 @@ Stylvee is a modern and user-friendly e-commerce website that specializes in clo
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
+- [Website Link](#website-link)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -45,9 +45,7 @@ Stylvee is a modern and user-friendly e-commerce website that specializes in clo
 5. Complete the purchase securely with integrated Sanity.io authentication.
 6. Experience personalized recommendations of similar items on product pages.
 
-## Screenshots
-![Screenshot 1](path-to-screenshot-1.png)
-![Screenshot 2](path-to-screenshot-2.png)
+## Website Link
 
 ## Contributing
 We welcome contributions from the community. If you find any bugs or have suggestions for improvement, feel free to open an issue or submit a pull request. Please review our [Contribution Guidelines](CONTRIBUTING.md) before contributing.
