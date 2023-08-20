@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Stylvee: Clothing and Wearable E-commerce Website
+
+![Stylvee Logo](path-to-your-logo.png)
+
+Stylvee is a modern and user-friendly e-commerce website that specializes in clothing and wearables for men, women, and kids. This repository contains the complete source code for the website, which is built using React.js and Next.js for the frontend and Sanity.io for managing products and user authentication. The website also employs machine learning techniques to offer users a personalized experience by showcasing similar items.
+
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+- User-friendly browsing of clothing and wearables across three categories: men, women, and kids.
+- Seamless user authentication and registration process powered by Sanity.io.
+- Detailed product pages with the option to view product descriptions, images, and pricing.
+- Shopping cart functionality allowing users to add products, select shipping addresses, review summaries, and complete purchases.
+- Smart recommendations: A machine learning model suggests similar items based on vectorization and cosine similarity.
+- Easy product management for providers using the Sanity.io platform.
+
+## Technologies Used
+- **Frontend**: Built using React.js, providing a smooth and interactive user experience.
+- **Backend**: Powered by Next.js, offering server-side rendering for improved performance.
+- **Database and CMS**: Utilized Sanity.io for managing products and user details, including authentication.
+- **Machine Learning**: Implemented a recommendation system based on vectorization and cosine similarity.
+- **Styling**: Styled components (or any other styling library used) for consistent and appealing UI.
 
 ## Getting Started
+1. Clone this repository: `git clone https://github.com/your-username/your-repo.git`
+2. Navigate to the project directory: `cd your-repo`
+3. Install dependencies: `npm install`
+4. Run the development server: `npm run dev`
+5. Access the website in your browser at `http://localhost:3000`
 
-First, run the development server:
+## Usage
+1. Browse through different categories: men, women, and kids.
+2. Click on a product to view its detailed page.
+3. Add items to your shopping cart and proceed to checkout.
+4. Provide shipping details and review the order summary.
+5. Complete the purchase securely with integrated Sanity.io authentication.
+6. Experience personalized recommendations of similar items on product pages.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Screenshots
+![Screenshot 1](path-to-screenshot-1.png)
+![Screenshot 2](path-to-screenshot-2.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
+We welcome contributions from the community. If you find any bugs or have suggestions for improvement, feel free to open an issue or submit a pull request. Please review our [Contribution Guidelines](CONTRIBUTING.md) before contributing.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the [MIT License](LICENSE).
