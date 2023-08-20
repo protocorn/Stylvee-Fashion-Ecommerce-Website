@@ -29,7 +29,7 @@ Stylvee is a modern and user-friendly e-commerce website that specializes in clo
 - **Styling**: Styled components (or any other styling library used) for consistent and appealing UI.
 
 ## Getting Started
-1. Clone this repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone this repository: `git clone https://github.com/protocorn/your-repo.git`
 2. Navigate to the project directory: `cd your-repo`
 3. Install dependencies: `npm install`
 4. Run the development server: `npm run dev`
